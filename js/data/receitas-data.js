@@ -1,0 +1,288 @@
+// ============================================
+// PRIETO ALIMENTOS - Receitas Data
+// 8 receitas de carne suína
+// ============================================
+
+const RECIPES = [
+    {
+        id: 1,
+        title: 'Costela Suína ao Molho Barbecue',
+        slug: 'costela-suina-barbecue',
+        description: 'Costela suína assada lentamente até ficar macia e suculenta, coberta com molho barbecue caseiro defumado. A carne se solta do osso com facilidade.',
+        shortDescription: 'Costela macia com molho barbecue defumado caseiro.',
+        emoji: '🔥',
+        time: '3h30',
+        difficulty: 'Médio',
+        servings: 6,
+        suggestedProduct: 14,
+        suggestedProductName: 'Costela Suína Defumada',
+        ingredients: [
+            '1,5 kg de costela suína Prieto',
+            '2 colheres de sopa de mostarda',
+            '4 dentes de alho picados',
+            'Sal e pimenta-do-reino a gosto',
+            '1 colher de sopa de páprica defumada',
+            '1 colher de chá de cominho',
+            '200ml de molho barbecue',
+            '2 colheres de sopa de mel',
+            '1 colher de sopa de vinagre de maçã',
+            '1 cebola picada',
+            '2 colheres de sopa de azeite'
+        ],
+        steps: [
+            'Tempere a costela com sal, pimenta, alho, mostarda, páprica e cominho. Deixe marinando por pelo menos 2 horas na geladeira.',
+            'Pré-aqueça o forno a 160°C. Coloque a costela em uma assadeira com a cebola, regue com azeite e cubra com papel alumínio.',
+            'Asse por 2 horas e 30 minutos, mantendo coberta para que a carne cozinhe no próprio vapor.',
+            'Enquanto isso, misture o molho barbecue, mel e vinagre de maçã em uma panela e aqueça por 5 minutos.',
+            'Retire o alumínio, pincele generosamente com o molho barbecue e aumente o forno para 200°C.',
+            'Asse por mais 30 minutos, pincelando mais molho a cada 10 minutos, até a costela ficar dourada e caramelizada.',
+            'Retire do forno e deixe descansar por 10 minutos antes de cortar. Sirva com molho extra à parte.'
+        ]
+    },
+    {
+        id: 2,
+        title: 'Lombo Suíno Recheado com Bacon',
+        slug: 'lombo-recheado-bacon',
+        description: 'Lombo suíno recheado com bacon crocante, queijo e ervas finas, envolto em fatias de bacon e assado até dourar. Um prato digno de celebrações.',
+        shortDescription: 'Lombo recheado com bacon e queijo, assado até dourar.',
+        emoji: '🥓',
+        time: '2h',
+        difficulty: 'Médio',
+        servings: 8,
+        suggestedProduct: 18,
+        suggestedProductName: 'Lombo Suíno Inteiro',
+        ingredients: [
+            '1,5 kg de lombo suíno inteiro Prieto',
+            '200g de bacon fatiado Prieto',
+            '150g de queijo muçarela',
+            '1 maço de espinafre',
+            '4 dentes de alho picados',
+            '2 colheres de sopa de mostarda dijon',
+            'Sal, pimenta e ervas de Provence a gosto',
+            '2 colheres de sopa de azeite',
+            '1 xícara de vinho branco seco',
+            'Barbante culinário'
+        ],
+        steps: [
+            'Abra o lombo em formato de livro com um corte horizontal, criando uma superfície plana para o recheio.',
+            'Tempere com sal, pimenta, alho e mostarda por dentro e por fora.',
+            'Refogue rapidamente o espinafre com um pouco de azeite e alho. Reserve e escorra bem.',
+            'Monte o recheio sobre o lombo aberto: camadas de bacon, espinafre e queijo muçarela.',
+            'Enrole o lombo firmemente e amarre com barbante culinário a cada 3 centímetros.',
+            'Envolva exteriormente com fatias de bacon, prendendo com palitos se necessário.',
+            'Sele o lombo em uma frigideira bem quente com azeite, dourando todos os lados.',
+            'Transfira para assadeira, adicione o vinho branco e leve ao forno a 180°C por 1h15.',
+            'Deixe descansar por 15 minutos antes de fatiar. Sirva com o molho da assadeira.'
+        ]
+    },
+    {
+        id: 3,
+        title: 'Pernil Assado com Ervas e Alho',
+        slug: 'pernil-assado-ervas',
+        description: 'Pernil suíno assado inteiro com crosta crocante de ervas e alho. Carne suculenta por dentro e dourada por fora, o clássico que não pode faltar.',
+        shortDescription: 'Pernil clássico com crosta de ervas e alho.',
+        emoji: '🍖',
+        time: '4h',
+        difficulty: 'Fácil',
+        servings: 12,
+        suggestedProduct: 16,
+        suggestedProductName: 'Pernil Suíno sem Osso',
+        ingredients: [
+            '3 kg de pernil suíno Prieto',
+            '10 dentes de alho',
+            '1/2 xícara de azeite',
+            '3 colheres de sopa de sal grosso',
+            '2 colheres de sopa de pimenta-do-reino',
+            '2 colheres de sopa de alecrim fresco',
+            '2 colheres de sopa de tomilho',
+            '2 cebolas em quartos',
+            '3 batatas grandes em pedaços',
+            '1 xícara de vinho branco',
+            'Suco de 2 limões'
+        ],
+        steps: [
+            'Na véspera, faça furos profundos no pernil com a ponta de uma faca e insira pedaços de alho em cada furo.',
+            'Prepare uma pasta com azeite, sal, pimenta, alecrim, tomilho e suco de limão. Esfregue por todo o pernil.',
+            'Cubra com filme e refrigere por 12 horas (ou no mínimo 4 horas).',
+            'Retire da geladeira 1 hora antes de assar para atingir temperatura ambiente.',
+            'Coloque numa assadeira grande com cebolas e batatas ao redor. Regue com vinho branco.',
+            'Cubra com papel alumínio e asse a 180°C por 3 horas.',
+            'Retire o alumínio, aumente para 220°C e asse por mais 40 minutos até a pele ficar crocante.',
+            'Regue com o suco da assadeira a cada 15 minutos nesta fase final.',
+            'Deixe descansar por 20 minutos coberto com alumínio antes de fatiar.'
+        ]
+    },
+    {
+        id: 4,
+        title: 'Linguiça Calabresa na Brasa com Vinagrete',
+        slug: 'linguica-calabresa-brasa-vinagrete',
+        description: 'Linguiça calabresa grelhada na brasa até ficar com a pele estourada e crocante, servida com vinagrete fresco de tomate e cebola.',
+        shortDescription: 'Calabresa grelhada na brasa com vinagrete fresco.',
+        emoji: '🌶️',
+        time: '40min',
+        difficulty: 'Fácil',
+        servings: 4,
+        suggestedProduct: 4,
+        suggestedProductName: 'Linguiça Calabresa Defumada',
+        ingredients: [
+            '500g de linguiça calabresa Prieto',
+            '3 tomates maduros em cubos',
+            '1 cebola grande em cubos',
+            '1 pimentão verde em cubos',
+            '1/2 xícara de salsinha picada',
+            '3 colheres de sopa de azeite',
+            '2 colheres de sopa de vinagre de vinho',
+            'Sal e pimenta a gosto',
+            'Pão francês para acompanhar'
+        ],
+        steps: [
+            'Prepare o vinagrete: misture tomate, cebola, pimentão, salsinha, azeite, vinagre, sal e pimenta. Refrigere por 30 minutos.',
+            'Acenda a churrasqueira ou grill e espere formar brasa uniforme.',
+            'Coloque a linguiça inteira na grelha, sem furar a tripa para manter a suculência.',
+            'Grelhe em fogo médio por 10 minutos de cada lado, até dourar uniformemente.',
+            'Quando a pele estiver crocante e ligeiramente estourada, retire da brasa.',
+            'Fatie em rodelas grossas na diagonal e disponha em um prato.',
+            'Cubra generosamente com o vinagrete frio. Sirva imediatamente com pão francês.'
+        ]
+    },
+    {
+        id: 5,
+        title: 'Feijoada Completa Prieto',
+        slug: 'feijoada-completa-prieto',
+        description: 'A tradicional feijoada brasileira feita com o kit completo Prieto. Receita transmitida por gerações, rica em sabor e história.',
+        shortDescription: 'Feijoada tradicional com kit completo Prieto.',
+        emoji: '🫘',
+        time: '5h',
+        difficulty: 'Médio',
+        servings: 10,
+        suggestedProduct: 7,
+        suggestedProductName: 'Kit Feijoada Completa',
+        ingredients: [
+            '1 kit feijoada completa Prieto (2,5 kg)',
+            '1 kg de feijão preto',
+            '2 linguiças calabresas Prieto',
+            '300g de bacon Prieto em cubos',
+            '4 folhas de louro',
+            '2 cebolas grandes picadas',
+            '8 dentes de alho picados',
+            '4 colheres de sopa de azeite',
+            'Sal e pimenta a gosto',
+            'Couve, farofa, arroz branco e laranja para acompanhar'
+        ],
+        steps: [
+            'Na véspera, coloque as carnes salgadas do kit em água fria e troque a água pelo menos 3 vezes ao longo de 12 horas.',
+            'Selecione e lave o feijão preto. Coloque de molho em água por 8 horas.',
+            'Em uma panela grande, cozinhe as carnes mais duras (orelha, pé, rabo) em água por 40 minutos na pressão.',
+            'Adicione a costela e o paio e cozinhe por mais 20 minutos.',
+            'Em outra panela, cozinhe o feijão na pressão por 25 minutos com louro.',
+            'Em uma frigideira, frite o bacon até dourar, adicione cebola e alho e refogue bem.',
+            'Retire uma concha de feijão cozido, amasse bem e adicione ao refogado para engrossar o caldo.',
+            'Junte tudo na panela grande: feijão, todas as carnes, linguiça fatiada e o refogado.',
+            'Cozinhe em fogo baixo por 40 minutos, ajustando sal e pimenta.',
+            'Sirva com arroz branco, couve refogada, farofa de bacon e laranja fatiada.'
+        ]
+    },
+    {
+        id: 6,
+        title: 'Bisteca Suína Grelhada ao Molho de Mostarda',
+        slug: 'bisteca-grelhada-mostarda',
+        description: 'Bisteca suína grelhada na perfeição, acompanhada de um molho cremoso de mostarda com toque de mel. Simples, elegante e delicioso.',
+        shortDescription: 'Bisteca grelhada com molho cremoso de mostarda.',
+        emoji: '🥩',
+        time: '45min',
+        difficulty: 'Fácil',
+        servings: 4,
+        suggestedProduct: 17,
+        suggestedProductName: 'Bisteca Suína',
+        ingredients: [
+            '4 bistecas suínas Prieto (cerca de 1 kg)',
+            '3 colheres de sopa de mostarda dijon',
+            '2 colheres de sopa de mel',
+            '200ml de creme de leite fresco',
+            '2 dentes de alho picados',
+            '1 colher de sopa de manteiga',
+            'Sal, pimenta e páprica a gosto',
+            'Azeite para grelhar',
+            'Salsinha fresca para decorar'
+        ],
+        steps: [
+            'Tempere as bistecas com sal, pimenta e páprica. Deixe descansar por 15 minutos.',
+            'Aqueça uma frigideira ou grill em fogo alto com azeite.',
+            'Grelhe as bistecas por 4-5 minutos de cada lado, até dourar bem. Reserve em prato aquecido.',
+            'Na mesma frigideira, reduza para fogo médio e adicione manteiga e alho.',
+            'Refogue por 30 segundos e adicione a mostarda e o mel, misturando bem.',
+            'Despeje o creme de leite e mexa até o molho engrossar levemente (2-3 minutos).',
+            'Retorne as bistecas para a frigideira e banhe com o molho.',
+            'Sirva imediatamente, decorando com salsinha fresca picada.'
+        ]
+    },
+    {
+        id: 7,
+        title: 'Tender ao Molho de Laranja com Mel',
+        slug: 'tender-molho-laranja-mel',
+        description: 'Tender suíno glazeado com um molho agridoce de laranja e mel, decorado com rodelas de laranja e cravos. O clássico natalino reinventado.',
+        shortDescription: 'Tender glazeado com laranja e mel.',
+        emoji: '🍊',
+        time: '2h30',
+        difficulty: 'Fácil',
+        servings: 10,
+        suggestedProduct: 1,
+        suggestedProductName: 'Tender Natalino Defumado',
+        ingredients: [
+            '1 tender Prieto (3,5 kg)',
+            '2 xícaras de suco de laranja natural',
+            '1/2 xícara de mel',
+            '3 colheres de sopa de açúcar mascavo',
+            '2 colheres de sopa de mostarda',
+            '1 colher de chá de canela em pó',
+            'Cravos-da-índia para espetar',
+            '2 laranjas em rodelas',
+            '1/2 xícara de uvas passas',
+            '2 colheres de sopa de manteiga'
+        ],
+        steps: [
+            'Pré-aqueça o forno a 180°C. Retire o tender da embalagem e faça cortes em losango na superfície.',
+            'Espete cravos-da-índia nas interseções dos cortes.',
+            'Em uma panela, misture suco de laranja, mel, açúcar mascavo, mostarda e canela. Aqueça até dissolver tudo.',
+            'Coloque o tender em uma assadeira, regue com metade do molho e disponha rodelas de laranja ao redor.',
+            'Cubra com papel alumínio e asse por 1h30, regando com o molho a cada 30 minutos.',
+            'Retire o alumínio, adicione as uvas passas e a manteiga ao molho restante.',
+            'Regue generosamente e asse por mais 30 minutos até dourar e caramelizar.',
+            'Deixe descansar 10 minutos, fatie e sirva com o molho da assadeira.'
+        ]
+    },
+    {
+        id: 8,
+        title: 'Torresmo Crocante com Limão e Pimenta',
+        slug: 'torresmo-crocante-limao-pimenta',
+        description: 'Torresmo extra crocante temperado com limão siciliano e pimenta-rosa. Perfeito como aperitivo para encontros com amigos ou acompanhamento de feijoada.',
+        shortDescription: 'Torresmo crocante com limão e pimenta-rosa.',
+        emoji: '🍋',
+        time: '1h30',
+        difficulty: 'Fácil',
+        servings: 6,
+        suggestedProduct: 19,
+        suggestedProductName: 'Bacon Fatiado Premium',
+        ingredients: [
+            '1 kg de barriga suína com pele (ou bacon em manta Prieto)',
+            '2 limões sicilianos (raspas e suco)',
+            '1 colher de sopa de pimenta-rosa',
+            '2 colheres de sopa de sal grosso',
+            '4 dentes de alho amassados',
+            '1 colher de chá de pimenta-do-reino',
+            '1 folha de louro',
+            'Óleo para fritar',
+            'Molho de pimenta para acompanhar'
+        ],
+        steps: [
+            'Corte a barriga suína em cubos de 3 cm. Se usar bacon em manta, corte em tiras grossas.',
+            'Coloque em uma panela com água, sal, alho e louro. Cozinhe por 30 minutos até a carne ficar macia.',
+            'Escorra completamente e seque os pedaços com papel toalha. Esse passo é crucial para a crocância.',
+            'Em uma frigideira funda ou panela, aqueça óleo em fogo médio-alto.',
+            'Frite os pedaços em pequenas porções, sem lotear a panela, por 8-10 minutos até dourar.',
+            'Retire com escumadeira e coloque sobre papel toalha para absorver o excesso de gordura.',
+            'Enquanto ainda quente, tempere com as raspas de limão, suco de limão, pimenta-rosa e pimenta-do-reino.',
+            'Sirva imediatamente como petisco, acompanhado de molho de pimenta e limão em fatias.'
+        ]
+    }
+];

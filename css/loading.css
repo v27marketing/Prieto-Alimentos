@@ -1,0 +1,342 @@
+/* ============================================
+   PRIETO ALIMENTOS - Loading Screen
+   Premium Awwwards-worthy loading animation
+   ============================================ */
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--prieto-black);
+    z-index: var(--z-loading);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loading-screen.hidden {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* Background grain texture */
+.loading-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px;
+}
+
+/* Animated particles background */
+.loading-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loading-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--prieto-red);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 3s infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0);
+    }
+    20% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20vh) scale(1);
+    }
+}
+
+/* Main loading content */
+.loading-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2xl);
+}
+
+/* Logo container */
+.loading-logo-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Rotating ring around logo */
+.loading-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border-top-color: var(--prieto-red);
+    border-right-color: rgba(200, 16, 46, 0.3);
+    animation: ringRotate 2s linear infinite;
+}
+
+.loading-ring:nth-child(2) {
+    width: 85%;
+    height: 85%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--prieto-red);
+    border-left-color: rgba(200, 16, 46, 0.2);
+    animation-duration: 3s;
+    animation-direction: reverse;
+}
+
+@keyframes ringRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Logo SVG Drawing Animation */
+.loading-logo {
+    width: 100px;
+    height: auto;
+    opacity: 0;
+    animation: logoReveal 0.8s ease forwards;
+    animation-delay: 0.3s;
+    filter: brightness(0) invert(1);
+}
+
+@keyframes logoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: brightness(0) invert(1) blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(0) invert(1) blur(0);
+    }
+}
+
+/* Glow behind logo */
+.loading-logo-glow {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 16, 46, 0.15) 0%, transparent 70%);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+/* Brand text */
+.loading-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.loading-brand-name {
+    font-family: var(--font-heading);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--prieto-white);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.loading-brand-name span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: letterReveal 0.4s ease forwards;
+}
+
+@keyframes letterReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading-brand-tagline {
+    font-family: var(--font-accent);
+    font-size: var(--fs-sm);
+    color: var(--prieto-gray-500);
+    font-style: italic;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeSlideUp 0.6s ease forwards;
+    animation-delay: 1.6s;
+}
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Progress bar */
+.loading-progress-wrapper {
+    width: 200px;
+    position: relative;
+    opacity: 0;
+    animation: fadeSlideUp 0.5s ease forwards;
+    animation-delay: 1.8s;
+}
+
+.loading-progress-track {
+    width: 100%;
+    height: 1px;
+    background: var(--prieto-gray-700);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.loading-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--prieto-red), var(--prieto-red-light));
+    border-radius: var(--radius-full);
+    transition: width 0.1s linear;
+    position: relative;
+}
+
+.loading-progress-bar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 5px;
+    height: 5px;
+    background: var(--prieto-red);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--prieto-red);
+}
+
+.loading-percentage {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: var(--prieto-gray-500);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* Exit animation */
+.loading-screen.exit {
+    animation: loadingExit 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.loading-screen.exit .loading-content {
+    animation: contentExit 0.5s ease forwards;
+}
+
+@keyframes contentExit {
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+        filter: blur(10px);
+    }
+}
+
+@keyframes loadingExit {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 100% 0);
+    }
+}
+
+/* Red Flash on exit */
+.loading-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--prieto-red);
+    z-index: calc(var(--z-loading) - 1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-flash.active {
+    animation: flashEffect 0.8s ease forwards;
+}
+
+@keyframes flashEffect {
+    0% { opacity: 0; }
+    30% { opacity: 0.15; }
+    100% { opacity: 0; }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .loading-logo-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .loading-logo {
+        width: 70px;
+    }
+    
+    .loading-brand-name {
+        font-size: var(--fs-xl);
+        letter-spacing: 6px;
+    }
+    
+    .loading-progress-wrapper {
+        width: 150px;
+    }
+}

@@ -1,0 +1,443 @@
+/* ============================================
+   PRIETO ALIMENTOS - Homepage Styles
+   ============================================ */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--prieto-dark);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(200, 16, 46, 0.15) 50%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    padding: 0 var(--space-xl);
+    margin-left: 8%;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-body);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--prieto-red-light);
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.hero-label .line {
+    width: 40px;
+    height: 2px;
+    background: var(--prieto-red);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-hero);
+    font-weight: 800;
+    color: var(--prieto-white);
+    line-height: 1.05;
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: var(--prieto-red-light);
+    font-family: var(--font-accent);
+    font-weight: 400;
+}
+
+.hero-description {
+    font-size: var(--fs-md);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: var(--space-2xl);
+    max-width: 500px;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.9s;
+}
+
+/* Scroll Indicator */
+.hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: var(--fs-xs);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 1.2s;
+    opacity: 0;
+}
+
+.hero-scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.5); opacity: 0.3; }
+}
+
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   Highlights Section
+   ============================================ */
+.highlights {
+    background: var(--prieto-gray-100);
+    position: relative;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+}
+
+.highlights .card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--prieto-gray-200);
+}
+
+/* ============================================
+   Tradition Section
+   ============================================ */
+.tradition {
+    position: relative;
+    overflow: hidden;
+}
+
+.tradition-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+}
+
+.tradition-content {
+    max-width: 500px;
+}
+
+.tradition-content h2 {
+    margin-bottom: var(--space-lg);
+}
+
+.tradition-content p {
+    color: var(--prieto-gray-600);
+    margin-bottom: var(--space-lg);
+    line-height: 1.8;
+}
+
+.tradition-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--prieto-gray-200);
+}
+
+.tradition-stat {
+    text-align: center;
+}
+
+.tradition-stat .number {
+    font-family: var(--font-heading);
+    font-size: var(--fs-3xl);
+    font-weight: 800;
+    color: var(--prieto-red);
+    line-height: 1;
+}
+
+.tradition-stat .label {
+    font-size: var(--fs-xs);
+    color: var(--prieto-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--space-xs);
+}
+
+.tradition-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+}
+
+.tradition-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tradition-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-2xl);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: var(--prieto-white);
+}
+
+.tradition-image-overlay .year {
+    font-family: var(--font-heading);
+    font-size: var(--fs-4xl);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.tradition-image-overlay .text {
+    font-size: var(--fs-sm);
+    opacity: 0.8;
+    margin-top: var(--space-xs);
+}
+
+/* ============================================
+   Recipes Preview Section
+   ============================================ */
+.recipes-preview {
+    background: var(--prieto-gray-100);
+}
+
+.recipes-carousel {
+    display: flex;
+    gap: var(--space-xl);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-lg);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.recipes-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.recipes-carousel .card {
+    min-width: 320px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    background: var(--prieto-white);
+    border: 1px solid var(--prieto-gray-200);
+}
+
+/* ============================================
+   Why Prieto Section
+   ============================================ */
+.why-prieto {
+    background: var(--prieto-white);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+}
+
+.why-item {
+    text-align: center;
+    padding: var(--space-2xl);
+}
+
+.why-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--prieto-gray-100);
+    color: var(--prieto-red);
+    transition: all var(--transition-base);
+}
+
+.why-item:hover .why-icon {
+    background: var(--prieto-red);
+    color: var(--prieto-white);
+    transform: scale(1.1);
+}
+
+.why-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.why-item h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.why-item p {
+    font-size: var(--fs-sm);
+    color: var(--prieto-gray-500);
+    line-height: 1.7;
+}
+
+/* ============================================
+   Etiqueta Negra Banner
+   ============================================ */
+.en-banner {
+    position: relative;
+    padding: var(--space-5xl) 0;
+    background: var(--prieto-black);
+    overflow: hidden;
+}
+
+.en-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(143, 119, 75, 0.08) 0%, transparent 70%);
+}
+
+.en-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.en-banner-logo {
+    width: 250px;
+    margin: 0 auto var(--space-xl);
+    opacity: 0.9;
+}
+
+.en-banner-content h2 {
+    font-family: var(--font-accent);
+    font-size: var(--fs-3xl);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--prieto-white);
+    margin-bottom: var(--space-md);
+}
+
+.en-banner-content p {
+    font-size: var(--fs-md);
+    color: var(--prieto-gray-400);
+    margin-bottom: var(--space-2xl);
+    line-height: 1.7;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+    .tradition-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+    
+    .tradition-image {
+        max-height: 400px;
+    }
+    
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        margin-left: 0;
+        text-align: center;
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .hero-scroll {
+        display: none;
+    }
+    
+    .tradition-stats {
+        justify-content: center;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .en-banner-logo {
+        width: 180px;
+    }
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto | Prieto Alimentos</title>
+    <meta name="description" content="Detalhes do produto Prieto Alimentos. Informações nutricionais, modo de preparo e receitas sugeridas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/produtos.css">
+    <style>
+        /* Product Detail Styles */
+        .product-detail-hero {
+            padding: calc(var(--navbar-height) + var(--space-2xl)) 0 var(--space-2xl);
+            background: var(--prieto-gray-50);
+        }
+        .product-detail-hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+        .product-image-box {
+            aspect-ratio: 1;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(245,245,245,.9));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200,16,46,.08);
+        }
+        .product-info h1 {
+            font-size: var(--fs-2xl);
+            margin-bottom: var(--space-xs);
+        }
+        .product-info .product-category-badge {
+            display: inline-block;
+            padding: var(--space-2xs) var(--space-sm);
+            background: var(--prieto-red);
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: var(--fs-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-md);
+        }
+        .product-info .product-category-badge.premium {
+            background: var(--prieto-gold);
+            color: var(--prieto-black);
+        }
+        .product-info .product-weight {
+            color: var(--prieto-gray-400);
+            margin-bottom: var(--space-md);
+            font-size: var(--fs-sm);
+        }
+        .product-info .product-description {
+            color: var(--prieto-gray-600);
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+        }
+        .product-info .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-lg);
+        }
+        .product-info .product-tags span {
+            padding: var(--space-2xs) var(--space-sm);
+            background: var(--prieto-gray-100);
+            border-radius: var(--radius-full);
+            font-size: var(--fs-xs);
+            color: var(--prieto-gray-600);
+        }
+        .product-preparation {
+            padding: var(--space-lg);
+            background: rgba(200,16,46,0.03);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--prieto-red);
+            margin-bottom: var(--space-lg);
+        }
+        .product-preparation h3 {
+            font-size: var(--fs-md);
+            margin-bottom: var(--space-sm);
+        }
+        .product-preparation p {
+            color: var(--prieto-gray-600);
+            line-height: 1.7;
+        }
+        .nutrition-section {
+            padding: var(--space-2xl) 0;
+        }
+        .nutrition-table {
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
+        }
+        .nutrition-table caption {
+            text-align: left;
+            font-weight: 700;
+            font-size: var(--fs-lg);
+            margin-bottom: var(--space-md);
+            caption-side: top;
+        }
+        .nutrition-table th,
+        .nutrition-table td {
+            padding: var(--space-sm) var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--prieto-gray-100);
+            font-size: var(--fs-sm);
+        }
+        .nutrition-table th {
+            color: var(--prieto-gray-400);
+            font-weight: 500;
+        }
+        .nutrition-table td {
+            font-weight: 600;
+        }
+        .related-products {
+            padding: var(--space-2xl) 0;
+            background: var(--prieto-gray-50);
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: var(--space-lg);
+        }
+        @media (max-width: 768px) {
+            .product-detail-hero .container {
+                grid-template-columns: 1fr;
+            }
+            .product-image-box {
+                font-size: 5rem;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <img src="src/Logo Prieto Vermelha.png" alt="Prieto Alimentos">
+            </a>
+            <div class="navbar-menu">
+                <a href="index.html">Início</a>
+                <a href="produtos.html" class="active">Produtos</a>
+                <a href="historia.html">Nossa História</a>
+                <a href="receitas.html">Receitas</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="navbar-hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="navbar-mobile-overlay">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="historia.html">Nossa História</a>
+        <a href="receitas.html">Receitas</a>
+        <a href="contato.html">Contato</a>
+        <a href="etiqueta-negra.html" style="color: var(--prieto-gold); font-style: italic;">Etiqueta Negra</a>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" id="breadcrumb">
+        <div class="container">
+            <a href="index.html">Início</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="produtos.html">Produtos</a>
+            <span class="breadcrumb-sep">/</span>
+            <span id="breadcrumb-product">Produto</span>
+        </div>
+    </div>
+
+    <!-- Product Detail Hero -->
+    <section class="product-detail-hero" id="product-detail-hero">
+        <div class="container">
+            <div class="product-image-box" id="product-emoji">
+                <!-- emoji inserted by JS -->
+            </div>
+            <div class="product-info" id="product-info">
+                <!-- populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition -->
+    <section class="nutrition-section" id="nutrition-section">
+        <div class="container">
+            <table class="nutrition-table" id="nutrition-table">
+                <caption>Informações Nutricionais</caption>
+                <!-- populated by JS -->
+            </table>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products" id="related-products">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Relacionados</span>
+                <h2>Produtos da mesma categoria</h2>
+            </div>
+            <div class="related-grid" id="related-grid">
+                <!-- populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="src/Logo Prieto Branco.png" alt="Prieto Alimentos">
+                    <p>Mais de 50 anos produzindo embutidos, cortes suínos e produtos derivados de carne com qualidade, tradição e sabor.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="produtos.html">Todos os Produtos</a></li>
+                        <li><a href="etiqueta-negra.html">Etiqueta Negra</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="historia.html">Nossa História</a></li>
+                        <li><a href="receitas.html">Receitas</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span>(11) 4898-8100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright® Prieto Alimentos - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="etiqueta-negra.html" class="etiqueta-negra-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        Conheça a Etiqueta Negra
+    </a>
+
+    <script src="js/data/produtos-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/produto-detalhe.js"></script>
+</body>
+</html>

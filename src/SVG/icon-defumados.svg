@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Smoked meat hanging -->
+  <path d="M14,10 L14,14" stroke-width="2" />
+  <path d="M24,8 L24,12" stroke-width="2" />
+  <path d="M34,10 L34,14" stroke-width="2" />
+  <!-- Hanging bar -->
+  <line x1="8" y1="10" x2="40" y2="10" stroke-width="2" />
+  <!-- Meat pieces hanging -->
+  <path d="M10,14 C10,14 12,14 14,14 C16,14 18,14 18,14 L17,30 C17,32 15,34 14,34 C13,34 11,32 11,30 Z" />
+  <path d="M20,12 C20,12 22,12 24,12 C26,12 28,12 28,12 L27,32 C27,34 25,36 24,36 C23,36 21,34 21,32 Z" />
+  <path d="M30,14 C30,14 32,14 34,14 C36,14 38,14 38,14 L37,30 C37,32 35,34 34,34 C33,34 31,32 31,30 Z" />
+  <!-- Smoke wisps -->
+  <path d="M16,38 C16,40 18,42 18,44" stroke-width="1" opacity="0.4" />
+  <path d="M24,38 C24,40 22,42 22,44" stroke-width="1" opacity="0.4" />
+  <path d="M32,38 C32,40 34,42 34,44" stroke-width="1" opacity="0.4" />
+</svg>

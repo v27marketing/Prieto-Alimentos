@@ -1,0 +1,375 @@
+/* ============================================
+   PRIETO ALIMENTOS - Global Styles
+   ============================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* CSS Custom Properties */
+:root {
+    /* Primary Colors */
+    --prieto-white: #FFFFFF;
+    --prieto-red: #C8102E;
+    --prieto-red-dark: #A00D24;
+    --prieto-red-light: #E8334D;
+    --prieto-dark: #1A1A1A;
+    --prieto-black: #0A0A0A;
+    
+    /* Etiqueta Negra Colors */
+    --prieto-gold: #8F774B;
+    --prieto-gold-light: #B89E6A;
+    --prieto-gold-dark: #6D5A38;
+    
+    /* Neutral Colors */
+    --prieto-gray-100: #F8F8F8;
+    --prieto-gray-200: #EFEFEF;
+    --prieto-gray-300: #D9D9D9;
+    --prieto-gray-400: #ABABAB;
+    --prieto-gray-500: #7D7D7D;
+    --prieto-gray-600: #555555;
+    --prieto-gray-700: #333333;
+    --prieto-gray-800: #1F1F1F;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', 'Georgia', serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-accent: 'Cormorant Garamond', 'Georgia', serif;
+    
+    /* Font Sizes - Fluid */
+    --fs-xs: clamp(0.7rem, 0.8vw, 0.8rem);
+    --fs-sm: clamp(0.8rem, 0.9vw, 0.9rem);
+    --fs-base: clamp(0.95rem, 1vw, 1.05rem);
+    --fs-md: clamp(1.1rem, 1.2vw, 1.25rem);
+    --fs-lg: clamp(1.3rem, 1.5vw, 1.5rem);
+    --fs-xl: clamp(1.6rem, 2vw, 2rem);
+    --fs-2xl: clamp(2rem, 2.5vw, 2.5rem);
+    --fs-3xl: clamp(2.5rem, 3.5vw, 3.5rem);
+    --fs-4xl: clamp(3rem, 5vw, 5rem);
+    --fs-hero: clamp(3.5rem, 7vw, 7rem);
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+    
+    /* Borders & Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
+    --shadow-glow: 0 0 30px rgba(255,255,255,0.15);
+    --shadow-glow-red: 0 0 30px rgba(200,16,46,0.2);
+    
+    /* Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-blur: blur(12px);
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+    --transition-slower: 800ms cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Z-Index Scale */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-navbar: 500;
+    --z-modal: 1000;
+    --z-loading: 9999;
+    
+    /* Layout */
+    --container-max: 1280px;
+    --container-wide: 1440px;
+    --navbar-height: 80px;
+}
+
+/* ============================================
+   CSS Reset
+   ============================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    color: var(--prieto-dark);
+    background-color: var(--prieto-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body.loading-active {
+    overflow: hidden;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    font-weight: 700;
+    overflow-wrap: break-word;
+}
+
+p {
+    overflow-wrap: break-word;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+h1 { font-size: var(--fs-4xl); }
+h2 { font-size: var(--fs-3xl); }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+h5 { font-size: var(--fs-lg); }
+h6 { font-size: var(--fs-md); }
+
+.text-accent {
+    font-family: var(--font-accent);
+    font-style: italic;
+}
+
+.text-red { color: var(--prieto-red); }
+.text-gold { color: var(--prieto-gold); }
+.text-white { color: var(--prieto-white); }
+.text-muted { color: var(--prieto-gray-500); }
+
+/* ============================================
+   Layout Utilities
+   ============================================ */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+}
+
+.container-wide {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+}
+
+.section {
+    padding: var(--space-5xl) 0;
+}
+
+.section-sm {
+    padding: var(--space-3xl) 0;
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-center { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid { display: grid; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* ============================================
+   Section Headers
+   ============================================ */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-4xl);
+}
+
+.section-header .section-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--prieto-red);
+    margin-bottom: var(--space-md);
+    position: relative;
+}
+
+.section-header .section-label::before,
+.section-header .section-label::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background: var(--prieto-red);
+}
+
+.section-header .section-label::before {
+    right: calc(100% + 12px);
+}
+
+.section-header .section-label::after {
+    left: calc(100% + 12px);
+}
+
+.section-header h2 {
+    color: var(--prieto-dark);
+    margin-bottom: var(--space-md);
+}
+
+.section-header p {
+    font-size: var(--fs-md);
+    color: var(--prieto-gray-500);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   Animations & Reveals
+   ============================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--prieto-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--prieto-gray-400);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--prieto-red);
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+::selection {
+    background-color: var(--prieto-red);
+    color: var(--prieto-white);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 65px;
+    }
+    
+    .container {
+        padding: 0 var(--space-md);
+    }
+    
+    .section {
+        padding: var(--space-3xl) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+}
