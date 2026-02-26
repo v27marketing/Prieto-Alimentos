@@ -50,6 +50,8 @@ async function fetchProdutoBySku(sku) {
  * Normalize a Supabase product row to the format used by the site
  */
 function normalizeProduto(row) {
+    // Column in Supabase is "photo" (not "foto")
+    const photoUrl = row.photo || row.foto || null;
     return {
         id: row.sku,
         sku: row.sku,
@@ -58,8 +60,8 @@ function normalizeProduto(row) {
         category: detectCategory(row.nome),
         description: cleanDescription(row.descricao),
         shortDescription: truncateText(cleanDescription(row.descricao), 120),
-        image: normalizeImageUrl(row.foto),
-        hasImage: !!row.foto,
+        image: normalizeImageUrl(photoUrl),
+        hasImage: !!photoUrl,
         tags: generateTags(row.nome)
     };
 }
